@@ -1,31 +1,21 @@
-'use client';
-import { useEffect, useState } from 'react';
-
-export default function Home() {
-  const [pokemons, setPokemons] = useState([]);
-
-  async function getPokemonData() {
-    const url = 'https://pokeapi.co/api/v2/pokemon?limit=20';
-    try {
-      const response = await fetch(url);
-      if (!response.ok) {
-        throw new Error(`Response status: ${response.status}`);
-      }
-
-      const json = await response.json();
-      console.log(json);
-      setPokemons(json.results);
-    } catch (error) {
-      console.error(error.message);
+async function getPokemonData() {
+  const url = 'https://pokeapi.co/api/v2/pokemon?limit=20';
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`Response status: ${response.status}`);
     }
+
+    const json = await response.json();
+    return json.results;
+  } catch (error) {
+    console.error(error.message);
+    return [];
   }
+}
 
-  useEffect(() => {
-    async function fetchData() {
-      await getPokemonData();
-    }
-    fetchData();
-  }, []);
+export default async function Home() {
+  const pokemons = await getPokemonData();
 
   return (
     <div className="">
