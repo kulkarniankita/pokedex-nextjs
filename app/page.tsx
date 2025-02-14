@@ -1,4 +1,4 @@
-import PokemonCard from '@/components/pokemon-card';
+import PokemonWrapper from '@/components/pokemon-wrapper';
 
 async function getPokemonData() {
   const url = 'https://pokeapi.co/api/v2/pokemon?limit=20';
@@ -27,7 +27,11 @@ async function getPokemonData() {
     );
     return pokemonDetails;
   } catch (error) {
-    console.error(error.message);
+    if (error instanceof Error) {
+      console.error(error.message);
+    } else {
+      console.error('An unknown error occurred');
+    }
     return [];
   }
 }
@@ -41,11 +45,8 @@ export default async function Home() {
         <h1 className="text-4xl md:text-6xl font-bold text-center text-white mb-8">
           Pokédex
         </h1>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-8">
-          {pokemons.map((pokemon, idx) => (
-            <PokemonCard key={`${pokemon.name}-${idx}`} pokemon={pokemon} />
-          ))}
-        </div>
+
+        <PokemonWrapper pokemons={pokemons} />
       </div>
     </div>
   );
