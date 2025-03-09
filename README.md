@@ -1,4 +1,25 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Pokédex Next.js Application
+
+This is a comprehensive [Next.js](https://nextjs.org) project created for [the Modern Full Stack Next.js Course](https://nextjscourse.dev/?utm_source=github).
+
+A modern Pokédex web application built with Next.js that displays Pokémon information fetched from the [PokéAPI](https://pokeapi.co/).
+
+## Features
+
+- Display Pokémon cards with official artwork
+- Show Pokémon types with color coding
+- Search functionality to filter Pokémon by name
+- Responsive design that works on desktop and mobile devices
+- Server-side rendering for improved performance and SEO
+- Learn important concepts like Debouncing and Treeshaking
+
+## Technologies Used
+
+- [Next.js 15](https://nextjs.org/) with App Router
+- [React 19](https://react.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/) for styling
+- [PokéAPI](https://pokeapi.co/) for Pokémon data
 
 ## Getting Started
 
@@ -16,21 +37,70 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `app/` - Next.js app router files
+- `components/` - React components
+  - `pokemon-card.tsx` - Individual Pokémon card display
+  - `pokemon-list.tsx` - Grid layout for Pokémon cards
+  - `pokemon-wrapper.tsx` - Container with search functionality
+  - `search-input.tsx` - Search input component
+- `utils/` - Utility functions and type definitions
 
-## Learn More
+## Getting Started with this Repository
 
-To learn more about Next.js, take a look at the following resources:
+### Fork the Repository
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Forking creates your own copy of this repository under your GitHub account, allowing you to:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Make changes without affecting the original project
+- Contribute back to the original project via pull requests
+- Track the original repository for updates
 
-## Deploy on Vercel
+To fork this repository:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Click the "Fork" button in the top-right corner of this GitHub repository
+2. Select your GitHub account as the destination
+3. Wait for GitHub to create your fork
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Clone Your Fork
+
+After forking, clone your fork to your local machine:
+
+```bash
+# Replace YOUR-USERNAME with your GitHub username
+git clone https://github.com/YOUR-USERNAME/hello-nextjs.git
+cd hello-nextjs
+```
+
+### Install Dependencies
+
+Install the project dependencies:
+
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+```
+
+### Run the Development Server
+
+Start the development server as described in the Getting Started section above.
+
+### Keeping Your Fork Updated
+
+To keep your fork in sync with the original repository:
+
+```bash
+# Add the original repository as a remote called "upstream"
+git remote add upstream https://github.com/ORIGINAL-OWNER/hello-nextjs.git
+
+# Fetch changes from the upstream repository
+git fetch upstream
+
+# Merge changes from upstream into your local main branch
+git checkout main
+git merge upstream/main
+```
